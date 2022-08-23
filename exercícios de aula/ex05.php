@@ -1,20 +1,10 @@
 <?php
     $nomes = array("jose", "neusa", "antonio", "erika", "tiago", "chico");
-    echo "<br>";
-    echo $nomes[0];
-    echo "<br>";
-    echo $nomes[2];
-    echo "<br>";
-    echo $nomes[4];
-    echo "<br>";
-    echo "<br>";
+    $notas = array(7.5, 7.0, 7.1, 8.0, 8.5, 7.7);
+    
     for ($x = 0; $x <= 6; $x++){
         echo "<br>";
         echo $nomes[$x];
     }
-
-    echo "<br>";
-    echo "<br>";
-
-    
+// EXERCÍCIO: imprimir nomes e notas numa tabela
 ?>
