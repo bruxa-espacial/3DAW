@@ -1,0 +1,13 @@
+*{
+    background-color: black;
+    color: antiquewhite;
+    margin: 0;
+}
+
+form{
+    margin: 10px;
+}
+
+button{
+    background-color: red;
+}
