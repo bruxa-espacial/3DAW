@@ -82,7 +82,7 @@
             </td>
         </tr>
     <?php
-            $y++;
+        $y++;
         }while ($y <= 5);
     ?>
     </table>
