@@ -1,33 +1,51 @@
 <?php
+    // EXERCÍCIO: imprimir nomes e notas numa tabela
     $nomes = array("jose", "neusa", "antonio", "erika", "tiago", "chico");
     $notas = array(7.5, 7.0, 7.1, 8.0, 8.5, 7.7);
-    
-    echo "<form>";
-            echo "<tr>";
-                echo "<th>";
-                echo "nome";
-                echo "</th>";
-                echo "<th>";
-                echo "nota";
-                echo "</th>";
-            echo "</tr>";
-    for ($x = 0; $x <= 6; $x++){
-            echo "<tr>";
-                echo "<td>";
-                echo "</td>";
-            echo "</tr>";
-        
-    }
-    echo "<form>";
-// EXERCÍCIO: imprimir nomes e notas numa tabela
 ?>
+<!DOCTYPE html>
 <html>
-    <form action="">
-        <tr>
-            <th></th>
-        </tr>
-        <tr>
-            <th></th>
-        </tr>
-    </form>
+    <head>
+    </head>
+    <body>
+        <table action="ex05.php">
+            <tr>
+                <th>Nome</th>
+                <th>Nota</th>
+            </tr>
+            <?php
+                for ($x = 0; $x <= 6; $x++){
+                    echo "<tr>";
+                        echo "<td>";
+                            echo $nomes[$x];
+                        echo "</td>";
+                        echo "<td>";
+                            echo $notas[$x];
+                        echo "</td>";
+                    echo "</tr>";
+                }
+            ?>
+        </table>
+        <br><br>
+        <table>
+            <tr>
+                <th>NOME</th>
+                <th>NOTA</th>
+            </tr>
+            <?php
+                for ($x = 0; $x <= 6; $x++){
+            ?>
+            <tr>
+                <td>
+                    <?php echo $nomes[$x];?>
+                </td>
+                <td>
+                    <?php echo $notas[$x];?>
+                </td>
+            </tr> 
+            <?php
+                }
+            ?>
+        </table>
+    </body>
 </html>
