@@ -14,7 +14,7 @@
                 <th>Nota</th>
             </tr>
             <?php
-                for ($x = 0; $x <= 6; $x++){
+                for ($x = 0; $x <= 5; $x++){
                     echo "<tr>";
                         echo "<td>";
                             echo $nomes[$x];
@@ -33,7 +33,7 @@
                 <th>NOTA</th>
             </tr>
             <?php
-                for ($x = 0; $x <= 6; $x++){
+                for ($x = 0; $x <= 5; $x++){
             ?>
             <tr>
                 <td>
