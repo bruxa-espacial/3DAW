@@ -1,4 +1,5 @@
 <?php
+    $media = 0;
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $nome = $_POST["nome"];
         $mat = $_POST["matricula"];
@@ -12,7 +13,6 @@
         fwrite($arquivoAluno, $txt);
         fclose($arquivoAluno);
         echo "<h2>Arquivo gerado com sucesso!</h2><br>";
-        echo "Media: ", $media; 
     } else {
         echo "<h1>Bom dia!</h1>";
     }
@@ -27,7 +27,7 @@
 <body>
     <!-- -->
     <br>
-    <form action="/ex08.php" method="post">
+    <form action="/spacewitch_3DAW/ex08.php" method="post">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome">
         <br>
@@ -42,5 +42,8 @@
         <br><br>
         <button type="submit">Enviar</button>
     </form>
+    <?php
+        echo "Media: ", $media; 
+    ?>
 </body>
 </html>
