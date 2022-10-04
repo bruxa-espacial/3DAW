@@ -11,6 +11,11 @@ CREATE TABLE `disciplinas` (
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(15) UNIQUE AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `snha` varchar(100) DEFAULT NULL,
+  `tipo` varchar(100) DEFAULT NULL,
+  `perfil` varchar(100) DEFAULT NULL,
   PRIMARY KEY (id_usuario)
 );
 
