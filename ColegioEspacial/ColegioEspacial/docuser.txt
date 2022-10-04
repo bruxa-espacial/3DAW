@@ -1,0 +1,3 @@
+nome;email;senha;tipo;perfil
+Ana Souza;AnaSou@gmail.com;63541243123;aluno;common
+Kala Souza;Kala@faeterj.com;97686796;aluno;common
