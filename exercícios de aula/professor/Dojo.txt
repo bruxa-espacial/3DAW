@@ -1,0 +1,3 @@
+nome;matricula 
+Zé da Silva;51210529
+Zé da Silva;51210529
