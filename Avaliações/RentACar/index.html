@@ -4,28 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
     <title>Início</title>
 </head>
 <body>
     <header>
-        <div class="ico">
+        <div class="cabecalho">
             <h1>Falls Car</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">inicio</a></li>
-                <li><a href="alugarcarro.html">alugar carro</a></li>
-                <li><a href="consultaraluguel.html">consultar aluguel</a></li>
-                <li><a href="login.html">login</a></li>
                 <li><a href="adminpage.html">admin</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <p>Seja bem-vindo ao melhor sistema de reserva de carros. Selecione abaixo o que quer fazer agora:</p>
-            <div class="menu"><a href="alugarcarro.html">Alugar Carro</a></div>
-            <div class="menu"><a href="consultaraluguel.html">Consultar Aluguel</a></div>
+            <form>
+                <fieldset>
+                    <legend>Procure pelo seu carro agora</legend>
+                    <div class="opcaoForm">
+                        <label for="retirada">Selecione o local de retirada</label>
+                        <select name="retirada" id="retirada">
+                            <option value="AIG">Aeroporto Internacional de Guarulhos</option>
+                            <option value="ACS">Aeroporto de Congonhas</option>
+                            <option value="ABB">Aeroporto de Brasília</option>
+                            <option value="AGR">Aeroporto do Galeão</option>
+                            <option value="ACB">Aeroporto de Confins</option>
+                            <option value="AVC">Aeroporto de Viracopos</option>
+                            <option value="ASD">Aeroporto do Santos Dumont</option>
+                            <option value="AGF">Aeroporto Gilberto Freyre</option>
+                            <option value="APA">Aeroporto de Porto Alegre</option>
+                            <option value="ASV">Aeroporto de Salvador</option>
+                        </select>
+                    </div>
+                    <div class="opcaoForm">
+                        <label for="dataRetirada">Selecione a data da retirada</label>
+                        <input type="date" name="dataRetirada" id="dataRetirada">
+                    </div>
+                    <div class="opcaoForm">
+                        <label for="plano">Selecione seu plano</label>
+                        <select name="plano" id="plano">
+                            <option value="7">Sete dias</option>
+                            <option value="15">Quinze dias</option>
+                            <option value="30">Trinta dias</option>
+                        </select>
+                    </div>
+                    <button type="button" onclick="buscarCarro()">Procurar</button>
+                </fieldset>
+            </form>
         </section>
     </main>
 </body>
