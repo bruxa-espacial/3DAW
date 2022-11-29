@@ -13,9 +13,18 @@
                 let preRequisito = document.getElementById("preRequisito").value;
                 let creditos = document.getElementById("creditos").value;
                 let xmlHttp = new XMLHttpRequest();
+
+                xmlHttp.onreadystatechange = function() {
+                    console.log("mudou status: " + this.readyState);
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log("Chegou resposta: " + this.responseText)
+                        document.getElementById("msg").innerHTML = this.responseText;
+                    }
+                }
     
-                xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirDisp?nome=" + nome +
+                xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirDisp.php?nome=" + nome +
                 "&preRequisito=" + preRequisito + "&creditos=" + creditos + "&periodo=" + periodo);
+
                 xmlHttp.send();
                 console.log(xhttp.responseText);
                 location.reload();
@@ -28,7 +37,7 @@
             <li class="botao"><a href="index.html">início</a></li>
             <li class="botao"><a href="inserirUsuario.html">inserir usuario</a></li>
             <li class="botao"><a href="inserirDisp.html">inserir disciplina</a></li>
-            <li class="botao"><a href="#">alterar disciplina</a></li>
+            <li class="botao"><a href="alterarDisp.html">alterar disciplina</a></li>
             <li class="botao"><a href="#">listar uma disciplina</a></li>
             <li class="botao"><a href="#">listar todas as disciplinas</a></li>
             <li class="botao"><a href="#">excluir disciplina</a></li>

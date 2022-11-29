@@ -1,8 +1,28 @@
 fieldset {
     background-color: #eeeeee;
 } 
+
 legend {
     background-color: gray;
     color: white;
     padding: 5px 10px;
+}
+
+.fantasma{
+    display: none;
+}
+
+table{
+    border:1px solid; 
+    display: none;
+    margin: 10px;
+}
+
+tr{
+    border: 1px solid;
+}
+
+th{
+    border:1px solid;
+    padding:0px 25px;
 }

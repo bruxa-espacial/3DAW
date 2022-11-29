@@ -12,14 +12,14 @@
                 var cpf = document.getElementById("cpf").value;
 
                 var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() 
+                /*xmlhttp.onreadystatechange = function() 
                 {
                     if (this.readyState == 4 && this.status == 200) 
                     {
-                        document.getElementById("resultado").innerHTML = this.responseText;
+                        document.getElementById("msg").innerHTML = this.responseText;
                     }
-                };
-                xmlhttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirUsuario?nome=" + nome +"&email=" + email + "&cpf=" 
+                };*/
+                xmlhttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirUsuario.php?nome=" + nome +"&email=" + email + "&cpf=" 
                 + cpf + "&matricula=" + matricula);
                 xmlhttp.send();   
             }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script>
+        function carregarDisciplinas() {
+            let xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        let objAlunos = this.responseText;
+                        let obj = JSON.parse(this.responseText);
+                        let x = 0;
+                        
+                        let valor = (obj[x].nome).localeCompare("undefined");
+                        if(valor!=0){
+                                for (x=0;x<obj.length;x++) {
+                                let linha = obj[x];
+                                criarLinhaTabela(linha);
+                            }
+                        }
+                    }
+                }
+                xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/listarDisps.php");
+                xmlHttp.send();
+        }
+
+        function criarLinhaTabela(linha) {
+            let tabela = document.getElementById("tabela");
+            let tr = document.createElement("tr");
+            
+            let tdId = document.createElement("td"); 
+            textnode = document.createTextNode(linha.id);
+            tdId.appendChild(textnode); 
+            tr.appendChild(tdId);
+
+            let tdNome = document.createElement("td"); 
+            textnode = document.createTextNode(linha.nome);
+            tdNome.appendChild(textnode); 
+            tr.appendChild(tdNome); 
+
+            let tdPeriodo = document.createElement("td");
+            textnode = document.createTextNode(linha.periodo);
+            tdPeriodo.appendChild(textnode); 
+            tr.appendChild(tdPeriodo);
+
+            let tdPreReq = document.createElement("td"); 
+            textnode = document.createTextNode(linha.idPreRequisito);
+            tdPreReq.appendChild(textnode); 
+            tr.appendChild(tdPreReq); 
+
+            let tdCreditos = document.createElement("td"); 
+            textnode = document.createTextNode(linha.credito);
+            tdCreditos.appendChild(textnode); 
+            tr.appendChild(tdCreditos); 
+
+            tabela.appendChild(tr);
+        }
+    </script>
+</head>
+<body onload="carregarDisciplinas();">
+    <header>
+        <ul>
+            <li class="botao"><a href="index.html">início</a></li>
+            <li class="botao"><a href="inserirUsuario.html">inserir usuario</a></li>
+            <li class="botao"><a href="inserirDisp.html">inserir disciplina</a></li>
+            <li class="botao"><a href="alterarDisp.html">alterar disciplina</a></li>
+            <li class="botao"><a href="listarDisp.html">listar uma disciplina</a></li>
+            <li class="botao"><a href="listarDisps.html">listar todas as disciplinas</a></li>
+            <li class="botao"><a href="excluirDisp.html">excluir disciplina</a></li>
+        </ul>
+    </header>
+    <main>
+        <table id="tabela">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Período</th>
+                <th>Pre-Requisito</th>
+                <th>Créditos</th>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

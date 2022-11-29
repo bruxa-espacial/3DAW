@@ -1,8 +1,9 @@
 <?php
     $servidor = "localhost";
-    $user = "";
+    $user = "root";
     $pass = "";
     $banco = "colegio_espacial";
+
     if($_SERVER["REQUEST_METHOD"]=="GET")
     {    
         $nome = $_GET["nome"];
@@ -15,13 +16,8 @@
         $sql="INSERT INTO `disciplinas`(`nome`, `idpre`, `creditos`, `periodo`) VALUES ('$nome', '$preRequisito', '$creditos', '$periodo')";
         
         $result=$conn->query($sql);
+
         echo $result;
         echo $sql;
-        if ($result=true){
-            $mensagem="Inserido com Sucesso";
-        } else {
-            $mensagem="Error";
-        }
     }
-echo $mensagem;
 ?>
