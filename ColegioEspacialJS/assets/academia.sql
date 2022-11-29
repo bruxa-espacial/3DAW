@@ -4,7 +4,7 @@ CREATE TABLE `disciplinas` (
   `id_disciplina` int(15) UNIQUE AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `periodo` int DEFAULT NULL,
-  `idpre` varchar(100) DEFAULT NULL,
+  `idpre` int DEFAULT NULL,
   `creditos` varchar(10) DEFAULT NULL,
   PRIMARY KEY (id_disciplina)
 );
@@ -12,7 +12,7 @@ CREATE TABLE `disciplinas` (
 CREATE TABLE `usuarios` (
   `id_usuario` int(15) UNIQUE AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
-  `matricula` int(20) DEFAULT NULL,
+  `matricula` int DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
   `tipo` varchar(100) DEFAULT NULL,
   `perfil` varchar(100) DEFAULT NULL,
