@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserir Disciplina</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script>
+        function enviarForm() {
+                let nome = document.getElementById("nome").value;
+                let periodo = document.getElementById("periodo").value;
+                let preRequisito = document.getElementById("preRequisito").value;
+                let creditos = document.getElementById("creditos").value;
+                let xmlHttp = new XMLHttpRequest();
+    
+                xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirDisp?nome=" + nome +
+                "&preRequisito=" + preRequisito + "&creditos=" + creditos + "&periodo=" + periodo);
+                xmlHttp.send();
+                console.log(xhttp.responseText);
+                location.reload();
+            }
+    </script>
+</head>
+<body>
+    <header>
+        <ul>
+            <li class="botao"><a href="index.html">início</a></li>
+            <li class="botao"><a href="inserirUsuario.html">inserir usuario</a></li>
+            <li class="botao"><a href="inserirDisp.html">inserir disciplina</a></li>
+            <li class="botao"><a href="#">alterar disciplina</a></li>
+            <li class="botao"><a href="#">listar uma disciplina</a></li>
+            <li class="botao"><a href="#">listar todas as disciplinas</a></li>
+            <li class="botao"><a href="#">excluir disciplina</a></li>
+        </ul>
+    </header>
+    <main>
+        <form id="formInserir">
+            <fieldset>
+              <legend>Digite os dados da disciplina</legend>
+                <div class="item">
+                  <label>Nome:</label>
+                  <input type="text" name="nome" id="nome" placeholder="nome"><br><br>
+                </div>
+                <div class="item">
+                  <label>Período:</label>
+                  <input type="text" name="periodo" id="periodo" placeholder="período"><br><br>
+                </div>
+                <div class="item">
+                  <label>Id do Pré-Requisito:</label>
+                  <input type="text" name="preRequisito" id="preRequisito" placeholder="pre-requisito"><br><br>
+                </div>
+                <div class="item">
+                  <label>Créditos:</label>
+                  <input type="text" name="creditos" id="creditos" placeholder="creditos"><br><br>
+                </div>
+                <input type="button" name="envio" value="Enviar" onclick="enviarForm();">
+              </fieldset>
+          </form>
+    </main>
+</body>
+</html>

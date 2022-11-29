@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Inserir Usuário</title>
+        <script>
+            function incluirAluno ()
+            {
+                var nome = document.getElementById("nome").value;
+                var matricula = document.getElementById("matricula").value;
+                var email = document.getElementById("email").value;
+                var cpf = document.getElementById("cpf").value;
+
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() 
+                {
+                    if (this.readyState == 4 && this.status == 200) 
+                    {
+                        document.getElementById("resultado").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/inserirUsuario?nome=" + nome +"&email=" + email + "&cpf=" 
+                + cpf + "&matricula=" + matricula);
+                xmlhttp.send();   
+            }
+        </script>
+        <link rel="stylesheet" href="assets/style.css">
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li class="botao"><a href="index.html">início</a></li>
+                <li class="botao"><a href="inserirUsuario.html">inserir usuario</a></li>
+                <li class="botao"><a href="inserirDisp.html">inserir disciplina</a></li>
+                <li class="botao"><a href="#">alterar disciplina</a></li>
+                <li class="botao"><a href="#">listar uma disciplina</a></li>
+                <li class="botao"><a href="#">listar todas as disciplinas</a></li>
+                <li class="botao"><a href="#">excluir disciplina</a></li>
+            </ul>
+        </header>
+        <main>
+        <h1>Inserir Aluno</h1>
+            <form class="formulario">
+                <label>Nome:</label>
+                <input type = "text" name = "nome" id = "nome"><br><br>
+                <label>Matricula:</label>
+                <input type = "text" name = "matricula" id = "matricula"><br><br>
+                <label>Email:</label>
+                <input type = "text" name = "email" id = "email"><br><br>
+                <label>CPF:</label>
+                <input type = "text" name = "cpf" id = "cpf"><br><br>
+                <input type = "button" name = "envio" value="Enviar" onclick="incluirAluno()">
+            </form>
+            <p id="msg">
+            </p>
+            <!--<form action="usuarioArquivo.php" method="POST" enctype="multipart/form-data" >
+                <fieldset>
+                    <legend style="font-size: 20px;">Insira o arquivo de texto com os usuários</legend>
+                    <input type="file" name="uploadArq" id="uploadArq" accept=".txt"><br>
+                    <input type="submit" value="Enviar" name="submit">
+                </fieldset>
+            </form>-->
+        </main>
+    </body>
+    </html>
