@@ -11,7 +11,7 @@
             let xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        let objAlunos = this.responseText;
+                        //let objDisp = this.responseText;
                         let obj = JSON.parse(this.responseText);
                         let x = 0;
                         
@@ -33,7 +33,7 @@
             let tr = document.createElement("tr");
             
             let tdId = document.createElement("td"); 
-            textnode = document.createTextNode(linha.id);
+            textnode = document.createTextNode(linha.id_disciplina);
             tdId.appendChild(textnode); 
             tr.appendChild(tdId);
 
@@ -48,12 +48,12 @@
             tr.appendChild(tdPeriodo);
 
             let tdPreReq = document.createElement("td"); 
-            textnode = document.createTextNode(linha.idPreRequisito);
+            textnode = document.createTextNode(linha.idpre);
             tdPreReq.appendChild(textnode); 
             tr.appendChild(tdPreReq); 
 
             let tdCreditos = document.createElement("td"); 
-            textnode = document.createTextNode(linha.credito);
+            textnode = document.createTextNode(linha.creditos);
             tdCreditos.appendChild(textnode); 
             tr.appendChild(tdCreditos); 
 
