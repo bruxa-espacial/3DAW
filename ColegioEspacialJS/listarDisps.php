@@ -7,16 +7,16 @@
     if($_SERVER["REQUEST_METHOD"]=="GET"){    
         
         $conn = new mysqli ($servidor, $user, $pass, $banco);
-        
+
         $sql= "SELECT * FROM `disciplinas`";
         
         $result=$conn->query($sql);
-        $vetDiscp[] = array();
+        $disciplinas[] = array();
         
         $i = 0;
         
         While ($linha = $result->fetch_assoc()){
-            $vetDiscp[$i] = $linha;
+            $disciplinas[$i] = $linha;
             $i++;
         }
 
