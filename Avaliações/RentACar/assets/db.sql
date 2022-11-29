@@ -19,7 +19,7 @@ CREATE TABLE automoveis (
     anoF varchar(100) DEFAULT NULL,
     combustivel varchar(100) DEFAULT NULL,
     tipomarcha varchar(100) DEFAULT NULL,
-    arcondicionado varchar(100) DEFAULT NULL,
+    arcondicionado BOOLEAN DEFAULT NULL,
     preco int DEFAULT NULL,
     estatus varchar(100) DEFAULT NULL,
     localR varchar (3) DEFAULT NULL,
