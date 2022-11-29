@@ -3,9 +3,9 @@ CREATE DATABASE fallscar;
 CREATE TABLE clientes (
   id_cliente int(15) UNIQUE AUTO_INCREMENT,
   nome varchar(150) DEFAULT NULL,
-  periodo int DEFAULT NULL,
-  idpre varchar(100) DEFAULT NULL,
-  creditos varchar(10) DEFAULT NULL,
+  cpf int DEFAULT NULL,
+  email varchar(70) DEFAULT NULL,
+  telefone varchar(15) DEFAULT NULL,
   PRIMARY KEY (id_cliente)
 );
 
