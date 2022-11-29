@@ -2,8 +2,7 @@
     $servidor = "localhost";
     $user = "root";
     $pass = "";
-    $banco = "av1js";
-    $retorno = "";
+    $banco = "colegio_espacial";
 
     if($_SERVER["REQUEST_METHOD"]=="GET")
     {   
@@ -15,7 +14,7 @@
         
         $conn = new mysqli ($servidor, $user, $pass, $banco);
         
-        $sql="UPDATE `disciplina` SET `nome`='$nome',`periodo`='$periodo',`idPreRequisito`='$preRequisito',`credito`='$credito' WHERE `id` = $id";
+        $sql="UPDATE `disciplinas` SET `nome`='$nome',`periodo`='$periodo',`idpre`='$preRequisito',`creditos`='$credito' WHERE `id` = $id";
         
         $result=$conn->query($sql);
         

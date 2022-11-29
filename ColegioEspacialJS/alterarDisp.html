@@ -15,7 +15,7 @@
                 let credito = document.getElementById("creditoAlt").value;
                 
                 let xmlHttp = new XMLHttpRequest();
-                xmlHttp.open("GET", "http://localhost/3DAW2022.2Leonardo/JSCrud/AV1_em_JS/alterarAV1?id=" + id + "&nome=" + nome + "&periodo=" + periodo
+                xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/alterarDisp.php?id=" + id + "&nome=" + nome + "&periodo=" + periodo
                 + "&preRequisito=" + preRequisito + "&credito=" + credito);
                 xmlHttp.send();
             }
@@ -37,7 +37,7 @@
                     formAlt.style.display = "block";
                 }
             }
-            xmlHttp.open("GET", "http://localhost/3DAW2022.2Leonardo/JSCrud/AV1_em_JS/listarUmAV1?id=" + id);
+            xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/listarDisp.php?id=" + id);
             xmlHttp.send();
         }
 
@@ -67,7 +67,7 @@
                   onclick="buscarDiscp();">
               </fieldset>
           </form>
-      
+          <br><br>
           <form id="formAlterar" class="fantasma">
               <fieldset>
                   <div class="item">
