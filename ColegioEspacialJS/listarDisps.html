@@ -11,18 +11,27 @@
             let xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-                        //let objDisp = this.responseText;
-                        let obj = JSON.parse(this.responseText);
-                        let x = 0;
-                        
-                        let valor = (obj[x].nome).localeCompare("undefined");
-                        if(valor!=0){
-                                for (x=0;x<obj.length;x++) {
-                                let linha = obj[x];
-                                criarLinhaTabela(linha);
-                            }
-                        }
+                       //document.ge
                     }
+                     //let objDisp = this.responseText;
+                    let obj = JSON.parse(this.responseText);
+                    let x = 0;
+                    let valor = (obj[x].nome).localeCompare("undefined");
+                    
+                    let txt = "<table border='1'>";
+                    txt += "<tr><th>Nome</th><th>Matricula</th><th>Email</th><th>CPF</th></tr>";
+                    for (x in obj){
+                        txt += "<tr><td>" + obj[x].nome + "</td><td>" + obj[x].matricula + "</td><td>" + obj[x].email + "</td><td>" + obj[x].cpf + "</td></tr>";
+                    }
+                    txt += "</table>";
+                    document.getElementById("resultado").innerHTML = txt;
+                    
+                    /*if (valor!=0){
+                        for (x=0;x<obj.length;x++) {
+                            let linha = obj[x];
+                            criarLinhaTabela(linha);
+                        }
+                    }*/
                 }
                 xmlHttp.open("GET", "http://localhost/3DAW/ColegioEspacialJS/listarDisps.php");
                 xmlHttp.send();
