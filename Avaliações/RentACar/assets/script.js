@@ -1,3 +1,5 @@
+setInterval(function(){location.reload(true);}, 10000);
+
 function inserirAuto() {
     let titulo = document.getElementById("titulo").value;
     let descricao = document.getElementById("descricao").value;
