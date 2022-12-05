@@ -46,6 +46,10 @@
                         <input type="text" name="titulo" id="titulo" placeholder="titulo"><br><br>
                     </div>
                     <div class="item">
+                        <label>descrição:</label>
+                        <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="digite uma breve descrição do carro"></textarea>
+                    </div>
+                    <div class="item">
                         <label>url com imagem do carro:</label>
                         <input type="imgurl" name="imgurl" id="imgurl" placeholder="url da foto"><br><br>
                     </div>
@@ -57,37 +61,70 @@
                         <label>quantidades de portas no carro:</label>
                         <input type="text" name="quantPortas" id="quantPortas" placeholder="quantidade de portas"><br><br>
                     </div>
-                    <div class="item">
-                        <label>cor do carro:</label>
-                        <input type="text" name="cor" id="cor" placeholder="cor do carro"><br><br>
+                    <div class="item"> 
+                        <label for="cor">cor do carro:</label>
+                        <select name="cor" id="cor">
+                            <option value="vermelho">Vermelho</option>
+                            <option value="prata">Prata</option>
+                            <option value="preto">Preto</option>
+                        </select>
                     </div>
                     <div class="item">
                         <label>ano do carro:</label>
                         <input type="text" name="anoF" id="anoF" placeholder="ano do carro"><br><br>
                     </div>
                     <div class="item">
-                        <label>tipo de combustível:</label>
-                        <input type="text" name="combustivel" id="combustivel" placeholder="tipo de combustivel"><br><br>
+                        <label for="combustivel">tipo de combustível:</label>
+                        <select name="combustivel" id="combustivel" multiple>
+                            <option value="gasolina">Gasolina</option>
+                            <option value="alcool">Álcool</option>
+                        </select>
                     </div>
                     <div class="item">
-                        <label>tipo de marcha:</label>
-                        <input type="text" name="tipomarcha" id="tipomarcha" placeholder="tipo de marcha"><br><br>
+                        <label for="tipomarcha">tipo de marcha:</label>
+                        <select name="tipomarcha" id="tipomarcha">
+                            <option value="manual">manual</option>
+                            <option value="auto">automatico</option>
+                        </select>
                     </div>
                     <div class="item">
-                        <label>tem ar-condicionado:</label>
-                        <input type="text" name="arcondicionado" id="arcondicionado" placeholder="ar-condicionado"><br><br>
+                        <label for="arcondicionado">ar-condicionado:</label>
+                        <select name="arcondicionado" id="arcondicionado">
+                            <option value="0">sem ar-condicionado</option>
+                            <option value="1">com ar-condicionado</option>
+                        </select>
                     </div>
                     <div class="item">
                         <label>preço do aluguel (por dia):</label>
                         <input type="text" name="preco" id="preco" placeholder="preço do aluguel"><br><br>
                     </div>
                     <div class="item">
-                        <label>status do carro:</label>
-                        <input type="text" name="estatus" id="estatus" placeholder="status do carro"><br><br>
+                        <label for="estatus">status do carro:</label>
+                        <select name="estatus" id="estatus">
+                            <option value="alugado">alugado</option>
+                            <option value="livre">livre</option>
+                            <option value="reservado">reservado</option>
+                            <option value="manutencao">em manutenção</option>
+                        </select>
                     </div>
                     <div class="item">
-                        <label>localização do carro:</label>
-                        <input type="text" name="localR" id="localR" placeholder="localização"><br><br>
+                        <label for="localR">localização do carro:</label>
+                        <select name="localR" id="localR">
+                            <option value="AIG">Aeroporto Internacional de Guarulhos</option>
+                            <option value="ACS">Aeroporto de Congonhas</option>
+                            <option value="ABB">Aeroporto de Brasília</option>
+                            <option value="AGR">Aeroporto do Galeão</option>
+                            <option value="ACB">Aeroporto de Confins</option>
+                            <option value="AVC">Aeroporto de Viracopos</option>
+                            <option value="ASD">Aeroporto do Santos Dumont</option>
+                            <option value="AGF">Aeroporto Gilberto Freyre</option>
+                            <option value="APA">Aeroporto de Porto Alegre</option>
+                            <option value="ASV">Aeroporto de Salvador</option>
+                        </select>
+                    </div>
+                    <div class="item">
+                        <label for="motorista">há a possibilidade de motorista:</label>
+                        <input type="checkbox" name="motorista" id="motorista">
                     </div>
                     <input type="button" name="envio" value="Enviar" onclick="inserirAuto();">
                 </fieldset>

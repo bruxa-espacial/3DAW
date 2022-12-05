@@ -3,7 +3,7 @@ CREATE DATABASE fallscar;
 CREATE TABLE clientes (
   id_cliente int(15) UNIQUE AUTO_INCREMENT,
   nome varchar(150) DEFAULT NULL,
-  cpf int DEFAULT NULL,
+  cpf int(11) DEFAULT NULL,
   email varchar(70) DEFAULT NULL,
   telefone varchar(15) DEFAULT NULL,
   PRIMARY KEY (id_cliente)
@@ -15,10 +15,10 @@ CREATE TABLE automoveis (
     imgurl varchar(100) DEFAULT NULL,
     quantPessoas int DEFAULT NULL,
     quantPortas int DEFAULT NULL,
-    cor varchar(100) DEFAULT NULL,
-    anoF varchar(100) DEFAULT NULL,
-    combustivel varchar(100) DEFAULT NULL,
-    tipomarcha varchar(100) DEFAULT NULL,
+    cor varchar(20) DEFAULT NULL,
+    anoF varchar(5) DEFAULT NULL,
+    combustivel varchar(50) DEFAULT NULL,
+    tipomarcha varchar(50) DEFAULT NULL,
     arcondicionado BOOLEAN DEFAULT NULL,
     preco int DEFAULT NULL,
     estatus varchar(100) DEFAULT NULL,
