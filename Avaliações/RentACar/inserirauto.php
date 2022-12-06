@@ -8,6 +8,7 @@
     {    
         $titulo = $_GET["titulo"];
         $descricao= $_GET["descricao"];
+        $placa= $_GET["placa"];
         $imgurl= $_GET["imgurl"];
         $quantPessoas= $_GET["quantPessoas"];
         $quantPortas= $_GET["quantPortas"];
@@ -23,11 +24,17 @@
 
         $conn = new mysqli ($servidor, $user, $pass, $banco);
         
-        $sql="INSERT INTO `automoveis`(`titulo`, `descricao`, `imgurl`, `quantPessoas`, `quantPortas`, `cor`, `anoF`, `combustivel`, `tipomarcha`, `arcondicionado`, `preco`, `estatus`, `localR`, `motorista`) VALUES ('$titulo', '$descricao', '$imgurl', '$quantPessoas', '$quantPortas', '$cor', '$anoF', '$combustivel', '$tipomarcha', '$arcondicionado', '$preco', '$estatus', '$localR', '$motorista')";
+        $sql="INSERT INTO `automoveis`(`titulo`, `descricao`, `placa`, `imgurl`, `quantPessoas`, `quantPortas`, `cor`, `anoF`, `combustivel`, `tipomarcha`, `arcondicionado`, `preco`, `estatus`, `localR`, `motorista`) VALUES ('$titulo', '$descricao', '$placa', '$imgurl', '$quantPessoas', '$quantPortas', '$cor', '$anoF', '$combustivel', '$tipomarcha', '$arcondicionado', '$preco', '$estatus', '$localR', '$motorista')";
         
         $result=$conn->query($sql);
 
         echo $result;
         echo $sql;
+
+        if ($result=true){
+            $mensagem="Carro inserido com sucesso.";
+        } else {
+            $mensagem="Sinto muito, parece que estamos enfrentando problemas.";
+        }
     }
 ?>

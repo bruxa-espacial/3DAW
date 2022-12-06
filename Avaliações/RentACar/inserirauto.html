@@ -19,18 +19,18 @@
                 <div class="categoria">
                     <h3>Automóveis</h3>
                     <div class="opcao"><a href="inserirauto.html">Inserir automóvel</a></div>
-                    <div class="opcao"><a href="#">Alterar automóvel</a></div>
-                    <div class="opcao"><a href="#">Buscar automóvel</a></div>
-                    <div class="opcao"><a href="#">Listar automóveis</a></div>
-                    <div class="opcao"><a href="#">Remover automóvel</a></div>
-                </div>
-                <div class="categoria">
-                    <h3>Clientes</h3>
-                    <div class="opcao"><a href="#">Inserir cliente</a></div>
-                    <div class="opcao"><a href="#">Alterar cliente</a></div>
-                    <div class="opcao"><a href="#">Buscar cliente</a></div>
-                    <div class="opcao"><a href="#">Listar clientes</a></div>
-                    <div class="opcao"><a href="#">Remover cliente</a></div>
+                <div class="opcao"><a href="alterarauto.html">Alterar automóvel</a></div>
+                <div class="opcao"><a href="buscarauto.html">Buscar automóvel</a></div>
+                <div class="opcao"><a href="listarauto.html">Listar automóveis</a></div>
+                <div class="opcao"><a href="removerauto.html">Remover automóvel</a></div>
+            </div>
+            <div class="categoria">
+                <h3>Clientes</h3>
+                <div class="opcao"><a href="inserircliente.html">Inserir cliente</a></div>
+                <div class="opcao"><a href="alterarcliente.html">Alterar cliente</a></div>
+                <div class="opcao"><a href="buscarcliente.html">Buscar cliente</a></div>
+                <div class="opcao"><a href="listarcliente.html">Listar clientes</a></div>
+                <div class="opcao"><a href="removercliente.html">Remover cliente</a></div>
                 </div>
                 <div class="categoria">
                     <h3>Outros</h3> 
@@ -38,6 +38,7 @@
             </div>
         </div>
         <div class="conteudo">
+            <h2>Inserir novo carro</h2>
             <form id="formInserir">
                 <fieldset>
                     <legend>Digite os dados do carro</legend>
@@ -48,6 +49,10 @@
                     <div class="item">
                         <label>descrição:</label>
                         <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="digite uma breve descrição do carro"></textarea>
+                    </div>
+                    <div class="item">
+                        <label for="placa">placa do carro:</label>
+                        <input type="text" name="placa" id="placa">
                     </div>
                     <div class="item">
                         <label>url com imagem do carro:</label>

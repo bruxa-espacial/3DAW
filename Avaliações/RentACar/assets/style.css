@@ -1,3 +1,7 @@
+body{
+    background-color: rgba(250, 235, 215, 0.582);
+}
+
 .menuadm{
     display: flex;
     width: 90%;
@@ -17,3 +21,56 @@
 fieldset{
     border: solid 2px blue;
 }
+
+.conteudo{
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.resultado{
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.modcontent{
+    margin: 0 auto;
+    margin-top: 5%;
+    max-width: 600px;
+    background-color: #eee;
+    padding: 0px;
+    box-shadow: 0 0 2px #fff;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    padding: 10px;
+}
+
+.modal-header{
+    background-color: #ccc;
+    text-align: center;
+}
+
+.modal-footer{
+    background-color: #ccc;
+}
+
+.btn{
+    background-color: aquamarine;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid rgb(43, 111, 116);
+    cursor: pointer;
+    transition: background .3s;
+    border-radius: 5px;
+    color: rgb(63, 63, 56);
+}
+
+.btn:hover{
+   background-color: rgb(88, 179, 148); 
+   color: beige;
+}
+

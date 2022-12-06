@@ -12,6 +12,8 @@ CREATE TABLE clientes (
 CREATE TABLE automoveis (
     id_auto int(15) UNIQUE AUTO_INCREMENT,
     titulo varchar(100) DEFAULT NULL,
+    descricao varchar(535) DEFAULT NULL,
+    placa varchar(7) DEFAULT NULL,
     imgurl varchar(100) DEFAULT NULL,
     quantPessoas int DEFAULT NULL,
     quantPortas int DEFAULT NULL,
@@ -23,6 +25,7 @@ CREATE TABLE automoveis (
     preco int DEFAULT NULL,
     estatus varchar(100) DEFAULT NULL,
     localR varchar (3) DEFAULT NULL,
+    motorista boolean DEFAULT NULL,
     PRIMARY KEY (id_auto)
 ); 
 
