@@ -1,4 +1,4 @@
-setInterval(function(){location.reload(true);}, 10000);
+///setInterval(function(){location.reload(true);}, 10000);
 
 //usar exibirResultado(dv-modal) para abrir a div
 function exibirResultado(nomemodal){
@@ -54,11 +54,11 @@ function inserirAuto() {
     xmlHttp.send();
     console.log(xhttp.responseText);
     location.reload();
+    form.reset();
 }
 
 function buscarAuto() {
-    let dado = document.getElementById("busca").value;
-            let escolha = document.querySelector('#filtro');
+            let pesquisa = document.getElementById("pesquisa").value;
 
             let xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function () {
@@ -75,6 +75,52 @@ function buscarAuto() {
                 }
             }
             
-    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/buscarauto.php?placa=" + placa);
+    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/buscarauto.php?pesquisa=" + pesquisa);
     xmlHttp.send();
+}
+
+function criarTabela(linha) {
+
+    let tabela = document.getElementById("tabela");
+    
+    exibirResultado(dv-modal);
+
+    let tr = document.createElement("tr");
+
+    //  coluna nome
+    let tdNome = document.createElement("td");
+    textnode = document.createTextNode(linha.nome);
+    tdNome.appendChild(textnode);
+    tr.appendChild(tdNome);
+
+    //  coluna categoria
+    let tdCategoria = document.createElement("td");
+    textnode = document.createTextNode(linha.categoria);
+    tdCategoria.appendChild(textnode);
+    tr.appendChild(tdCategoria);
+
+    //  coluna cidade
+    let tdCidade = document.createElement("td");
+    textnode = document.createTextNode(linha.cidade);
+    tdCidade.appendChild(textnode);
+    tr.appendChild(tdCidade);
+
+    //  coluna preco
+    let tdPreco = document.createElement("td");
+    textnode = document.createTextNode(linha.preco);
+    tdPreco.appendChild(textnode);
+    tr.appendChild(tdPreco);
+
+    //  coluna periodo
+    let tdPeriodo = document.createElement("td");
+    textnode = document.createTextNode(linha.periodo);
+    tdPeriodo.appendChild(textnode);
+    tr.appendChild(tdPeriodo);
+
+    
+    let input = document.getElementById("busca");
+    input.setAttribute("onclick", "location.reload();");
+
+    let envio = document.getElementById("envio");
+    envio.setAttribute("onclick", "location.reload();");
 }

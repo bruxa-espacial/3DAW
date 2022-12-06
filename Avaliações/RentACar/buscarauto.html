@@ -36,12 +36,27 @@
                 <h3>Outros</h3> 
             </div>
         </div>
-        <div class="conteudo"></div>
+        <div class="conteudo">
+            <h3>Pesquisar automóvel</h3>
+            <form>
+                <fieldset>
+                    <legend>Informe o título a ser buscado:</legend>
+                    <input type="text" name="pesquisa" id="pesquisa" placeholder="pesquisa">
+                    <input type="button" name="envio" value="Buscar" onclick="buscarAuto();">
+                </fieldset>
+            </form>
+        </div>
         <div id="dv-modal" class="resultado">
             <div class="modcontent">
                 <div class="modal-header">
+                    <h3>Resultado da busca</h3>
                 </div>
                 <div class="modal-body">
+                    <table id="tabela">
+                        <tr>
+                            <th>Título</th>
+                        </tr>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button class="btn">Fechar</button>
