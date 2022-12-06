@@ -1,6 +1,6 @@
 <?php
     
-    require_once('config.php');
+    require('config.php');
 
     if($_SERVER["REQUEST_METHOD"]=="GET")
     {    
@@ -12,7 +12,7 @@
         $quantPortas = $_GET["quantPortas"];
         $cor = $_GET["cor"];
         $anoF = $_GET["anoF"];
-        $combustivel = implode(', ', $_GET["combustivel"]);
+        $combustivel = $_GET["combustivel"];
         $tipomarcha = $_GET["tipomarcha"];
         $arcondicionado = $_GET["arcondicionado"];
         $preco = $_GET["preco"];

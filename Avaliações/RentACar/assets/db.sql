@@ -19,7 +19,7 @@ CREATE TABLE automoveis (
     quantPortas int DEFAULT NULL,
     cor varchar(20) DEFAULT NULL,
     anoF varchar(5) DEFAULT NULL,
-    combustivel varchar(50) DEFAULT NULL,
+    combustivel varchar(100) DEFAULT NULL,
     tipomarcha varchar(50) DEFAULT NULL,
     arcondicionado BOOLEAN DEFAULT NULL,
     preco int DEFAULT NULL,
