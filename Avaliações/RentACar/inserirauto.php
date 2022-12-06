@@ -21,13 +21,9 @@
         $motorista = $_GET["motorista"];
 
 
-        
         $sql = "INSERT INTO automoveis(titulo, descricao, placa, imgurl, quantPessoas, quantPortas, cor, anoF, combustivel, tipomarcha, arcondicionado, preco, estatus, localR, motorista) VALUES ('$titulo', '$descricao', '$placa', '$imgurl', '$quantPessoas', '$quantPortas', '$cor', '$anoF', '$combustivel', '$tipomarcha', '$arcondicionado', '$preco', '$estatus', '$localR', '$motorista')";
         
         $resultado = $conn -> query($sql);
-
-        echo $resultado;
-        echo $sql;
 
         if ($resultado){
             $mensagem="Carro inserido com sucesso.";
