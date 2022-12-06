@@ -1,38 +1,33 @@
 <?php
-
     require_once('config.php');
     
-    $retorno = "";
+    //$sql = "SELECT titulo, estatus, localR FROM `automoveis`";
+    //WHERE `titulo` LIKE %$pesquisa%
 
-    if($_SERVER["REQUEST_METHOD"]=="GET"){   
+    if($_SERVER["REQUEST_METHOD"]=="GET")
+    {    
+        //$escolha = $_GET["escolha"];
+        $parametro = $_GET["parametro"];
+
+        $sql = "SELECT id_auto, titulo, estatus, localR FROM `automoveis` WHERE `titulo` LIKE %$parametro%";
         
-        $parametro = filter_input(INPUT_GET, "parametro");
-
-
-
-        $pesquisa = $_GET["pesquisa"];
-
-
-        $sql = "SELECT * FROM `automoveis` WHERE `titulo` LIKE %$pesquisa%";
-        
-        $result=$conn->query($sql);
-        $vetCarros[] = array();
+        $resultado = $conn -> query($sql);
+        $carros[] = array();
         
         $i = 0;
         
-        While ($linha = $result->fetch_assoc()){
-            $vetCarros[$i] = $linha;
+        while ($linha = $resultado -> fetch_assoc()){
+            $carros[$i] = $linha;
             $i++;
         }
 
-        if ($result=true){
-            $retorno=json_encode($vetCarros);
+        if ($resultado =true){
+            $mensagem=json_encode($carros);
 
         } else {
-            $retorno=json_encode('Erro na execução');
+            $mensagem=json_encode('Houve um erro');
         }
     }
-
-    echo $retorno;
+    echo $mensagem;
 
 ?>

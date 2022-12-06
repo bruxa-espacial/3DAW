@@ -1,4 +1,4 @@
-///setInterval(function(){location.reload(true);}, 10000);
+setInterval(function(){location.reload(true);}, 10000);
 
 //usar exibirResultado(dv-modal) para abrir a div
 function exibirResultado(nomemodal){
@@ -58,7 +58,7 @@ function inserirAuto() {
 }
 
 function buscarAuto() {
-            let pesquisa = document.getElementById("pesquisa").value;
+            let parametro = document.getElementById("parametro").value;
 
             let xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function () {
@@ -75,49 +75,84 @@ function buscarAuto() {
                 }
             }
             
-    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/buscarauto.php?pesquisa=" + pesquisa);
+    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/buscarauto.php?parametro=" + parametro.value);
     xmlHttp.send();
 }
 
 function criarTabela(linha) {
 
-    let tabela = document.getElementById("tabela");
-    
     exibirResultado(dv-modal);
 
+    let tabela = document.getElementById("tabela");
     let tr = document.createElement("tr");
 
-    //  coluna nome
+    //Coluna nome
     let tdNome = document.createElement("td");
     textnode = document.createTextNode(linha.nome);
     tdNome.appendChild(textnode);
     tr.appendChild(tdNome);
 
-    //  coluna categoria
+    //Coluna categoria
     let tdCategoria = document.createElement("td");
     textnode = document.createTextNode(linha.categoria);
     tdCategoria.appendChild(textnode);
     tr.appendChild(tdCategoria);
 
-    //  coluna cidade
+     //Coluna Cidade
     let tdCidade = document.createElement("td");
     textnode = document.createTextNode(linha.cidade);
     tdCidade.appendChild(textnode);
     tr.appendChild(tdCidade);
 
-    //  coluna preco
+    //Coluna Preco
     let tdPreco = document.createElement("td");
     textnode = document.createTextNode(linha.preco);
     tdPreco.appendChild(textnode);
     tr.appendChild(tdPreco);
 
-    //  coluna periodo
+     //Coluna Periodo
     let tdPeriodo = document.createElement("td");
     textnode = document.createTextNode(linha.periodo);
     tdPeriodo.appendChild(textnode);
     tr.appendChild(tdPeriodo);
 
-    
+    let tdBotao = document.createElement("td");
+    //Botao Comprar
+    let butComprar = document.createElement("input");
+    butComprar.setAttribute("type", "button");
+    butComprar.setAttribute("value", "Comprar");
+    butComprar.setAttribute("style", "margin-right: 5px");
+    butComprar.setAttribute("class", "botao");
+    tdBotao.appendChild(butComprar);
+    tr.appendChild(tdBotao);
+
+    //Botao Detalhes
+    let butDetalhes = document.createElement("input");
+    butDetalhes.setAttribute("type", "button");
+    butDetalhes.setAttribute("value", "Detalhes");
+    butDetalhes.setAttribute("class", "botao");
+    tdBotao.appendChild(butDetalhes);
+    tr.appendChild(tdBotao);
+
+    tabela.appendChild(tr);
+    tabela.style.display = "table";
+            
+    butComprar.onclick = function alugarCarro(params){
+    let urlSearch = new URLSearchParams(location.search);
+    let idCliente = urlSearch.get('id');
+
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", "http://localhost/3DAW2022.2Leonardo/AV2/alugarCarros.php?idCliente=" + idCliente + "&idCarro=" + linha.id + "&periodo=" + linha.periodo + "&preco=" + linha.preco);
+    xmlHttp.send();
+    }
+
+    butDetalhes.onclick = function alugarCarro(params){
+    let urlSearch = new URLSearchParams(location.search);
+    let idCliente = urlSearch.get('id');
+
+    window.location.replace("http://localhost/3DAW2022.2Leonardo/AV2/mostrarDetalhes.html?idCliente="+ idCliente + "&placa=" + linha.placa);
+    }
+            
     let input = document.getElementById("busca");
     input.setAttribute("onclick", "location.reload();");
 

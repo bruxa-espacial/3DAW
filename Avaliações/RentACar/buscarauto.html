@@ -41,7 +41,7 @@
             <form>
                 <fieldset>
                     <legend>Informe o título a ser buscado:</legend>
-                    <input type="text" name="pesquisa" id="pesquisa" placeholder="pesquisa">
+                    <input type="text" name="parametro" id="parametro" placeholder="pesquisa">
                     <input type="button" name="envio" value="Buscar" onclick="buscarAuto();">
                 </fieldset>
             </form>
@@ -53,9 +53,14 @@
                 </div>
                 <div class="modal-body">
                     <table id="tabela">
-                        <tr>
-                            <th>Título</th>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>nome</th>
+                                <th>status</th>
+                                <th>local de retirada</th>
+                                <th>ações</th>
+                            </tr>
+                        </thead>
                     </table>
                 </div>
                 <div class="modal-footer">

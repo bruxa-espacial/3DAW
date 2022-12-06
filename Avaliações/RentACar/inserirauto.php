@@ -18,7 +18,16 @@
         $preco = $_GET["preco"];
         $estatus = $_GET["estatus"];
         $localR = $_GET["localR"];
-        $motorista = $_GET["motorista"];
+
+        if (isset($_GET["motorista"])){
+            if ($_GET["motorista"] == '1'){
+                $motorista = '1';
+            } else {
+                $motorista = '0';
+            }
+        } else {
+            $motorista = '0';
+        }
 
 
         $sql = "INSERT INTO automoveis(titulo, descricao, placa, imgurl, quantPessoas, quantPortas, cor, anoF, combustivel, tipomarcha, arcondicionado, preco, estatus, localR, motorista) VALUES ('$titulo', '$descricao', '$placa', '$imgurl', '$quantPessoas', '$quantPortas', '$cor', '$anoF', '$combustivel', '$tipomarcha', '$arcondicionado', '$preco', '$estatus', '$localR', '$motorista')";
