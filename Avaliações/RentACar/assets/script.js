@@ -79,83 +79,56 @@ function buscarAuto() {
     xmlHttp.send();
 }
 
-function criarTabela(linha) {
+function listarAuto(){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        console.log("mudou status: " + this.readyState);
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Chegou resposta: " + this.responseText)
+            document.getElementById("msg").innerHTML = this.responseText;
+            let objAuto = this.responseText;
+            let obj = JSON.parse(this.responseText);
+            let x = 0;
+            let valor = (obj[x].nome).localeCompare("undefined");
+            if(valor!=0){
+                for (x=0;x<obj.length;x++) {
+                    let linha = obj[x];
+                    criarLinhaTabela(linha);
+                }
+            }
+        }
+    }
 
-    exibirResultado(dv-modal);
+    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/listarauto.php");
+    xmlHttp.send();
+}
+
+
+function criarTabela(linha) {
 
     let tabela = document.getElementById("tabela");
     let tr = document.createElement("tr");
+            
+    //  coluna nome
+    let tdTitulo = document.createElement("td");
+    textnode = document.createTextNode(linha.titulo);
+    tdTitulo.appendChild(textnode);
+    tr.appendChild(tdTitulo);
 
-    //Coluna nome
-    let tdNome = document.createElement("td");
-    textnode = document.createTextNode(linha.nome);
-    tdNome.appendChild(textnode);
-    tr.appendChild(tdNome);
+    //  coluna status
+    let tdEstatus = document.createElement("td");
+    textnode = document.createTextNode(linha.estatus);
+    tdEstatus.appendChild(textnode);
+    tr.appendChild(tdEstatus);
 
-    //Coluna categoria
-    let tdCategoria = document.createElement("td");
-    textnode = document.createTextNode(linha.categoria);
-    tdCategoria.appendChild(textnode);
-    tr.appendChild(tdCategoria);
+    //  coluna local de retirada
+    let tdlocalR = document.createElement("td");
+    textnode = document.createTextNode(linha.localR);
+    tdlocalR.appendChild(textnode);
+    tr.appendChild(tdlocalR);
 
-     //Coluna Cidade
-    let tdCidade = document.createElement("td");
-    textnode = document.createTextNode(linha.cidade);
-    tdCidade.appendChild(textnode);
-    tr.appendChild(tdCidade);
-
-    //Coluna Preco
-    let tdPreco = document.createElement("td");
-    textnode = document.createTextNode(linha.preco);
-    tdPreco.appendChild(textnode);
-    tr.appendChild(tdPreco);
-
-     //Coluna Periodo
-    let tdPeriodo = document.createElement("td");
-    textnode = document.createTextNode(linha.periodo);
-    tdPeriodo.appendChild(textnode);
-    tr.appendChild(tdPeriodo);
-
-    let tdBotao = document.createElement("td");
-    //Botao Comprar
-    let butComprar = document.createElement("input");
-    butComprar.setAttribute("type", "button");
-    butComprar.setAttribute("value", "Comprar");
-    butComprar.setAttribute("style", "margin-right: 5px");
-    butComprar.setAttribute("class", "botao");
-    tdBotao.appendChild(butComprar);
-    tr.appendChild(tdBotao);
-
-    //Botao Detalhes
-    let butDetalhes = document.createElement("input");
-    butDetalhes.setAttribute("type", "button");
-    butDetalhes.setAttribute("value", "Detalhes");
-    butDetalhes.setAttribute("class", "botao");
-    tdBotao.appendChild(butDetalhes);
-    tr.appendChild(tdBotao);
+    //  coluna ações
+     
 
     tabela.appendChild(tr);
-    tabela.style.display = "table";
-            
-    butComprar.onclick = function alugarCarro(params){
-    let urlSearch = new URLSearchParams(location.search);
-    let idCliente = urlSearch.get('id');
-
-    let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "http://localhost/3DAW2022.2Leonardo/AV2/alugarCarros.php?idCliente=" + idCliente + "&idCarro=" + linha.id + "&periodo=" + linha.periodo + "&preco=" + linha.preco);
-    xmlHttp.send();
-    }
-
-    butDetalhes.onclick = function alugarCarro(params){
-    let urlSearch = new URLSearchParams(location.search);
-    let idCliente = urlSearch.get('id');
-
-    window.location.replace("http://localhost/3DAW2022.2Leonardo/AV2/mostrarDetalhes.html?idCliente="+ idCliente + "&placa=" + linha.placa);
-    }
-            
-    let input = document.getElementById("busca");
-    input.setAttribute("onclick", "location.reload();");
-
-    let envio = document.getElementById("envio");
-    envio.setAttribute("onclick", "location.reload();");
 }

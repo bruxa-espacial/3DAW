@@ -1,6 +1,6 @@
 <?php
     
-    require('config.php');
+    require('assets/config.php');
 
     if($_SERVER["REQUEST_METHOD"]=="GET")
     {    

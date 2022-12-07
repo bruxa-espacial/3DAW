@@ -27,7 +27,7 @@ fieldset{
     padding: 10px;
 }
 
-.resultado{
+#dv-modal{
     background-color: rgba(0, 0, 0, .8);
     position: fixed;
     top: 0;
@@ -72,5 +72,10 @@ fieldset{
 .btn:hover{
    background-color: rgb(88, 179, 148); 
    color: beige;
+}
+
+table{
+    border: 1px solid;
+    padding: 0px 25px;
 }
 

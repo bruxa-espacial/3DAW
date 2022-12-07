@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js"></script>
 </head>
-<body>
+<body onload="listarAuto();">
     <main>
         <header>
             <a href="index.html">inicio</a>
@@ -37,38 +37,29 @@
             </div>
         </div>
         <div class="conteudo">
-            <h3>Pesquisar automóvel</h3>
-            <form>
-                <fieldset>
-                    <legend>Informe o título a ser buscado:</legend>
-                    <input type="text" name="parametro" id="parametro" placeholder="pesquisa">
-                    <input type="button" name="envio" value="Buscar" onclick="buscarAuto();">
-                </fieldset>
-            </form>
+            <h3>Lista dos automóveis cadastrados:</h3>
+            <table id="tabela">
+                <thread>
+                    <tr>
+                        <th>nome</th>
+                        <th>status</th>
+                        <th>local de retirada</th>
+                    </tr>
+                </thread>
+            </table>
         </div>
         <div id="dv-modal" class="resultado">
             <div class="modcontent">
-                <div class="modal-header">
-                    <h3>Resultado da busca</h3>
-                </div>
-                <div class="modal-body">
-                    <table id="tabela">
-                        <thead>
-                            <tr>
-                                <th>nome</th>
-                                <th>status</th>
-                                <th>local de retirada</th>
-                                <th>ações</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                <div class="modal-header"></div>
+                <div class="modal-body"></div>
                 <div class="modal-footer">
                     <button class="btn">Fechar</button>
                 </div>
             </div>
         </div>
-        <p id="msg"></p>
     </main>
+    <footer>
+        <p id="msg"></p>
+    </footer>
 </body>
 </html>

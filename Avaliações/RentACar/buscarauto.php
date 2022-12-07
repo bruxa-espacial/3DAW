@@ -1,5 +1,5 @@
 <?php
-    require_once('config.php');
+    require_once('assets/config.php');
     
     //$sql = "SELECT titulo, estatus, localR FROM `automoveis`";
     //WHERE `titulo` LIKE %$pesquisa%
