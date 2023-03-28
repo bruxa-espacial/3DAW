@@ -79,31 +79,6 @@ function buscarAuto() {
     xmlHttp.send();
 }
 
-function listarAuto(){
-    let xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        console.log("mudou status: " + this.readyState);
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("Chegou resposta: " + this.responseText)
-            document.getElementById("msg").innerHTML = this.responseText;
-            let objAuto = this.responseText;
-            let obj = JSON.parse(this.responseText);
-            let x = 0;
-            let valor = (obj[x].nome).localeCompare("undefined");
-            if(valor!=0){
-                for (x=0;x<obj.length;x++) {
-                    let linha = obj[x];
-                    criarLinhaTabela(linha);
-                }
-            }
-        }
-    }
-
-    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/listarauto.php");
-    xmlHttp.send();
-}
-
-
 function criarTabela(linha) {
 
     let tabela = document.getElementById("tabela");
@@ -131,4 +106,27 @@ function criarTabela(linha) {
      
 
     tabela.appendChild(tr);
+}
+
+function listarAuto(){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() {
+        console.log("mudou status: " + this.readyState);
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Chegou resposta: " + this.responseText)
+            document.getElementById("msg").innerHTML = this.responseText;
+            let objAuto = this.responseText;
+            let obj = JSON.parse(this.responseText);
+            let x = 0;
+            let valor = (obj[x].nome).localeCompare("undefined");
+            if (valor!=0){
+                for (x=0; x<obj.length; x++) {
+                    let linha = obj[x];
+                    criarTabela(linha);
+                }
+            }
+        }
+    }
+    xmlHttp.open("GET", "http://localhost/3DAW/Avalia%C3%A7%C3%B5es/RentACar/listarauto.php");
+    xmlHttp.send();
 }
